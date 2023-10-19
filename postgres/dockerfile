@@ -1,0 +1,12 @@
+FROM postgres:latest
+
+# Définition des variables d'environnement
+ENV POSTGRES_DB=ben_flask
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=Benhadji99
+
+# Copie du fichier SQL d'initialisation dans le conteneur
+COPY ./init_db.py /docker-entrypoint-initdb.d/init_db.py
+
+
+EXPOSE 5432

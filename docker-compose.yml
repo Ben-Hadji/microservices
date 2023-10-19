@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+
+  flask_db:
+    container_name: flask_db
+    image: postgres:12
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=Benhadji99  
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=ben_flask  
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres/init_db.py:/docker-entrypoint-initdb.d/init_db.py  
+    networks:
+      - ben_network
+    restart: on-failure
+
+  flask_app:
+    container_name: flask_app
+    build:
+      context: ./app  
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"  
+    environment:
+      - DB_URL=postgresql://postgres:Benhadji99@flask_db:5432/ben_flask  
+    depends_on:
+      - flask_db
+    networks:
+      - ben_network
+    restart: always
+
+ 
+
+volumes:
+  pgdata:
+    driver: local
+
+networks:
+  ben_network:
+    driver: bridge

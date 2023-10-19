@@ -1,0 +1,5 @@
+# Fichiers Python générés par la compilation (.pyc)
+*.pyc
+
+# Répertoires de cache Python
+__pycache__/
