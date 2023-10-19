@@ -35,7 +35,32 @@ Cela dit, comme toutes technologies, il est important d'énoncer certaines limit
 ## Structure Base de données
 <img width="94" alt="image" src="https://github.com/Ben-Hadji/microservices/assets/83819844/5c619505-428d-4434-970a-900b0c6e9cec">
 
+comme vous pouvez le voir, notre base de donnée est composée de deux tables : items et types. liées de la sorte : 
+    Un item ne peut être que d'un seul et unique type alors qu'un type peut être liés à plusieurs items.
+Cette manière de faire presente une limite flagrante etant donné l'optique dans lequel on compte l'utilisé. En effet, il s'agit ici d'un site qui repertorie les fournitures liées aux besoins de l'ecole et/ou au besoin du bureau. On peut donc s'appercevoir que certains items sont à la fois utilisés et au bureau et à l'école. Pour cela, nous prevoyons de faire evoluer notre base de données de la manière suivante : 
 
+<img width="269" alt="image" src="https://github.com/Ben-Hadji/microservices/assets/83819844/3b5f8abf-56b0-48b1-8143-58980443e5c2">
+
+Ainsi, un item peut avoir plusieurs type et donc resoudre le probleme qui se pose en ce moment.
+
+##Fonctionnement & amélioration: 
+Comme cité precedemment, ce site sert à presenter les  articles de fournitures soit academiques soit bureautiques.
+
+**Fontionnement** : 
+
+Il propose quatre fonctionnements majeurs : 
+  - ***Afficher tous les articles (boms, prixs et type)***
+  - ***Ajouter un nouvel articles***
+  - ***modifier un article***
+  - ***supprimer un article***
+
+**Amélioration** : 
+
+Pour l'instant toutes ces opérations sont à la portée de chaque utilisateur. ce qui n'est pas sans risque car cela veut dire que n'importe qui peut apporter des modification et donc les informations peuvent trés vite etre erronnées.
+Nous avons penser donc à apporter certaines modifications majeures dans l'avenir, telles que : 
+  - ***Gestion des roles des utilisateurs*** : limiter l'accès à certaines fonctionnalités selon le type d'utilisateurs
+  - ***Système d'authentification*** : dans le même optique que le point précedent, cela permettra de fludifier la gestion des roles en identifiant l'utilisateur en se basant sur les données de son compte
+  - ***Differences entre les interface graphiques*** : selon le type de compte utilisé, certaines fonctionnalités et fenêtres ne seront pas visible 
 ## Architecture
 
 - your_project_folder/
