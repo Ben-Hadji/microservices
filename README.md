@@ -60,8 +60,9 @@ Pour l'instant toutes ces opérations sont à la portée de chaque utilisateur. 
 Nous avons penser donc à apporter certaines modifications majeures dans l'avenir, telles que : 
   - ***Gestion des roles des utilisateurs*** : limiter l'accès à certaines fonctionnalités selon le type d'utilisateurs
   - ***Système d'authentification*** : dans le même optique que le point précedent, cela permettra de fludifier la gestion des roles en identifiant l'utilisateur en se basant sur les données de son compte
-  - ***Differences entre les interface graphiques*** : selon le type de compte utilisé, certaines fonctionnalités et fenêtres ne seront pas visible 
-## Architecture
+  - ***Differences entre les interface graphiques*** : selon le type de compte utilisé, certaines fonctionnalités et fenêtres ne seront pas visible
+  - 
+## Structure du Projet
 
 - your_project_folder/
   - app/
