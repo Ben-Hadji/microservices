@@ -30,3 +30,20 @@ Cela dit, comme toutes technologies, il est important d'énoncer certaines limit
 2. ***Coûts potentiels*** : Bien que PostgreSQL soit une base de données open source, si on décide de passer dans le cloud, des coûts peuvent lui être associés dû à la gestion de serveurs, de sauvegarde...etc.
 3. ***Dépendance aux extensions*** : Pour ajouter des fonctionnalités à notre application, on devra souvent utiliser des extensions tierces. Cela nous expose à une forte dépendance de la qualité et compatibilité de ces extensions, ce qui entraine alors de potentiels risques.
 4. Pour des applications telles que la notre dans l'état actuel, Flask semble être une très bonne solution, mais si on devrait revoir notre application de manière à ce qu'elle soit gourmandes en ressources où à très grandes échelles, il y a de forte chance que flash présente des limites de performances. Ainsi, il serait plus judicieux d'anticiper un changement de Framework en allant vers un autre Framework python plus complet tel que Django. 
+
+
+## Structure Base de données
+<img width="94" alt="image" src="https://github.com/Ben-Hadji/microservices/assets/83819844/5c619505-428d-4434-970a-900b0c6e9cec">
+
+
+## Architecture
+
+- your_project_folder/
+  - app/
+    - app.py
+    - templates/
+      - index.html
+  - postgres/
+    - init_db
+    - dockerfile
+  - dockercompose.yaml 
