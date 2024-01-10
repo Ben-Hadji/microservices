@@ -5,9 +5,9 @@ services:
   flask_db:
     container_name: flask_db
     image: postgres:12
-    build:
-      context: ./postgres
-      dockerfile: Dockerfile
+    # build:
+    #   context: ./postgres
+    #   dockerfile: Dockerfile
     ports:
       - "5432:5432"
     environment:
@@ -29,7 +29,7 @@ services:
     ports:
       - "5000:5000"  
     environment:
-      - DB_URL=postgresql://postgres:Benhadji99@flask_db:5432/ben_flask  
+      - DB_URL=postgresql://postgres:Benhadji99@flask_db:5433/ben_flask  
     depends_on:
       - flask_db
     networks:

@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 def db_conn():
-    conn = psycopg2.connect(host="flask_db", database="ben_flask", user="postgres", password="Benhadji99", port="5432")
+    conn = psycopg2.connect(host='flask_db', user="postgres", password="Benhadji99", port="5432")
     return conn
 
 @app.route('/', methods=['GET']) # on définit la route pour la page d'accueil
@@ -53,13 +53,12 @@ def update():
 def delete():
     conn = db_conn()
     cur = conn.cursor()
-    
-    id = request.form['id'] # on recupere l'id de l'item à supprimer via le formulaire
-    cur.execute('''DELETE FROM items WHERE id=%s''', (id,))   # on supprime l'item de la table
+    id = request.form['id'] # get the id of the item to delete
+    cur.execute('''DELETE FROM items WHERE id=%s''', (id,)) # delete the item
     conn.commit()
     cur.close()
     conn.close()
-    return redirect(url_for('index'))
+    return redirect(url_for('index')) # redirect to the home page
 
 if __name__ == '__main__':
     time.sleep(10)
